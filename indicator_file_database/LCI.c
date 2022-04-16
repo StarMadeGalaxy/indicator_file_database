@@ -618,6 +618,11 @@ LCI* create_lci_array(LCI* indicators, size_t* amount)
 
 			indicators[i] = indicator;		// TODO: buffer overflow warning
 		}
+		else {
+			perror("\nОшибка выделения памяти: ");
+			*amount = 0;
+			return NULL;
+		}
 	}
 
 	puts("\nСоздание завершено!");
